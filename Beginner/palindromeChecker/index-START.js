@@ -5,11 +5,24 @@ e.g palindromeChecker('racecar') // will return true
 
 
 
-
 function palindromeChecker(text) {
-    v// Code goes here
-}
 
+    const original = text.split('');
+    const reverse = [...original].reverse();
+    // console.log(original);
+    // console.log(reverse);
+    for (let i=0; i<original.length; i++) {
+      for (let j=i; j<original.length; j++, i++) {
+  
+        console.log('i: ' + original[i] + ' j: ' + reverse[j]);
+        
+        if (original[i] !== reverse[j]) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
 
 
 module.exports = palindromeChecker;
