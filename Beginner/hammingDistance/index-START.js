@@ -5,9 +5,18 @@ E.g hammingDistance('rover', 'river') // should return 1
 
 
 
-
 function hammingDistance(stringA, stringB) {
-    // Code goes here
+    stringA = stringA.split('');
+    stringB = stringB.split('');
+    let diff = [];
+    for (let i = 0; i < stringA.length; i++) {
+        for (let j = i; j < stringA.length; j++ , i++) {
+            if (stringA[i] !== stringB[j] || stringB[j] !== stringA[i]) {
+                diff.push(stringA[i]);
+            }
+        }
+    }
+    return diff.length;
 }
 
 
