@@ -7,8 +7,24 @@ don't. E.g
 
 
 
+
 function isAnagram(stringA, stringB) {
-    // Code goes here
+    stringA = stringA.split('');
+    stringB = stringB.split('');
+
+    if (stringA.length !== stringB.length) {
+        return false;
+    } else {
+        let codeA = stringA.map(x => x.charCodeAt());
+        let codeB = stringB.map(x => x.charCodeAt());
+        let x = codeA.filter(item => codeB.includes(item));
+
+        if (x.length !== codeA.length) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
 
 
