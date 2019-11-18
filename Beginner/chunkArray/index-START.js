@@ -5,8 +5,12 @@
 */
 
 function chunkArray(array, size) {
-    // Code goes here
-}
+    let newArr = [];
+    for ( let i=0; i < array.length; i+= size ) {
+      newArr.push(array.slice(i, i+size));
+    }
+    return newArr;
+  }
 
 
 module.exports = chunkArray
