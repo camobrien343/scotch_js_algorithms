@@ -10,10 +10,20 @@ than 1(index 0), but less than 2(index 1).
 
 
 function whereIBelong(arr, num) {
-   // Code goes here
+  // Code goes here
+  let fk = [];
+ for (let i=0; i< arr.length; i++) {
+   if ( arr[i] === num ) {
+     return arr.indexOf(arr[i]);
+   } else {
+     if ( arr[i] <= num ) {
+       fk.push(i);
+     }
+   }
+ }
+ return fk.length;
 
 }
-
 
 
 module.exports = whereIBelong
