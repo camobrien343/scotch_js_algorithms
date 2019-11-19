@@ -4,9 +4,14 @@ e.g vowelsCounter('anehizxcv') // will return 3
 */
 
 
+
 function vowelsCounter(text) {
-    // Code goes here
-}
+    text = text.split("");
+    let re = /[aeiou]/gi;
+    let result = text.filter(item => item.match(re))
+    return result.length;
+  }
+  
 
 
 
